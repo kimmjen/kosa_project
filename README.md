@@ -39,6 +39,9 @@
 
 ## API
 
+<p class="바탕글">국내교통부_국내항공운항정도 &nbsp;<a class="url" href="https://www.data.go.kr/data/15000755/openapi.do" target="_blank">www.data.go.kr/data/15000755/openapi.do</a></p>
+
+
 https://developer.worldspan.co.kr/?page_id=55
 
 https://m.blog.naver.com/tmondev/221145172930
