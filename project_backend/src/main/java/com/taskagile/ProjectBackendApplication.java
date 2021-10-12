@@ -1,4 +1,4 @@
-package com.example.project_backend;
+package com.taskagile;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ProjectBackendApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ProjectBackendApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ProjectBackendApplication.class, args);
+    }
 
 }
