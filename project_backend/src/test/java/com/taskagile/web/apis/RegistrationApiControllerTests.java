@@ -1,5 +1,6 @@
 package com.taskagile.web.apis;
 
+import com.taskagile.config.SecurityConfiguration;
 import com.taskagile.domain.application.UserService;
 import com.taskagile.domain.model.user.UsernameExistsException;
 import com.taskagile.utils.JsonUtils;
@@ -10,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -19,7 +22,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
+@ContextConfiguration(classes = {SecurityConfiguration.class, RegistrationApiController.class})
 @WebMvcTest(RegistrationApiController.class)
+@ActiveProfiles("test")
 public class RegistrationApiControllerTests {
 
   @Autowired
@@ -32,6 +37,7 @@ public class RegistrationApiControllerTests {
   public void register_blankPayload_shouldFailAndReturn400() throws Exception {
     mvc.perform(post("/api/registrations"))
       .andExpect(status().is(400));
+    // 사실은 400 -> 404
   }
 
   @Test
