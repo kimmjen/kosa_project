@@ -48,4 +48,13 @@ public class RegistrationCommand {
     result = 31 * result + (password != null ? password.hashCode() : 0);
     return result;
   }
+
+  @Override
+  public String toString() {
+    return "RegistrationCommand{" +
+            "username='" + username + '\'' +
+            ", emailAddress='" + emailAddress + '\'' +
+            ", password='" + password + '\'' +
+            '}';
+  }
 }

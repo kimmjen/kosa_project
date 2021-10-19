@@ -35,11 +35,8 @@ public class User extends AbstractBaseEntity {
   @Column(name = "created_date", nullable = false)
   private Date createdDate;
 
-  public User() {
-  }
-
   /**
-   * Create new user during registration
+   * Create new user
    */
   public static User create(String username, String emailAddress, String password) {
     User user = new User();
@@ -57,8 +54,8 @@ public class User extends AbstractBaseEntity {
     this.lastName = lastName;
   }
 
-  public Long getId() {
-    return id;
+  public UserId getId() {
+    return new UserId(id);
   }
 
   public String getUsername() {
@@ -91,7 +88,7 @@ public class User extends AbstractBaseEntity {
     if (!(o instanceof User)) return false;
     User user = (User) o;
     return Objects.equals(username, user.username) &&
-      Objects.equals(emailAddress, user.emailAddress);
+            Objects.equals(emailAddress, user.emailAddress);
   }
 
   @Override
@@ -102,13 +99,13 @@ public class User extends AbstractBaseEntity {
   @Override
   public String toString() {
     return "User{" +
-      "id=" + id +
-      ", username='" + username + '\'' +
-      ", emailAddress='" + emailAddress + '\'' +
-      ", password=<Protected> " +
-      ", firstName='" + firstName + '\'' +
-      ", lastName='" + lastName + '\'' +
-      ", createdDate=" + createdDate +
-      '}';
+            "id=" + id +
+            ", username='" + username + '\'' +
+            ", emailAddress='" + emailAddress + '\'' +
+            ", password=<Protected> " +
+            ", firstName='" + firstName + '\'' +
+            ", lastName='" + lastName + '\'' +
+            ", createdDate=" + createdDate +
+            '}';
   }
 }
